@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!--Font awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+        crossorigin="anonymous">
+    <style>
+        img.icon{
+            float: left;
+        };
+    </style>
+</head>
+  <body class="bg-light">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-8 col-sm-10 col-xs-8 mx-auto ">
+              <div class="card card-body text-center mt-3 bg-info row ">
+                <div class="card card-body text-center mt-3 bg-light col-md-10 mx-auto">
+                    <h1 class="heading display-4 pb-2 text-info" style="font-size: 3em;">Weather Boardcaster</h1>
+                </div>
+
+                <hr style="border: white 1px solid;">                
+                <h3 class="pb-2 text-light display-4" id="location" style="font-size: 2.2em;">Location</h3>
+                <h3 class="pb-2 text-dark display-4" id="description" style="font-size: 1.8em;">Description</h3>
+                <h3 class="pb-2 text-light display-4" id="temp" style="font-size: 2em;">Temperature</h3>
+                <div class="col-md-4 mx-auto" id="icon"></div>
+
+                <div class="row mb-0">
+                    <ul class="list-group mt-1 col-md-8 mx-auto fa-ul" id="detail">
+                        
+                        <li class="list-group-item" >
+                            <img src="https://img.icons8.com/ios/50/000000/humidity.png" width="30" class='icon'/> 
+                            <p id="humid"></p>
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://img.icons8.com/ios/50/000000/temperature-sensitive.png" width="30" class='icon'/>
+                            <p id="range"></p>
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://img.icons8.com/ios/50/000000/future.png" width="30" class='icon'/>
+                            <p id="feels-like"></p>
+                        </li>
+                        <li class="list-group-item">
+                            <img src="https://img.icons8.com/ios/50/000000/wind.png" width="30" class='icon'/>
+                            <p id="wind"></p>
+                        </li>
+                    </ul>    
+                </div>
+
+
+                <!-- Button trigger modal -->
+                <button class="btn btn-light mt-1 btn-lg mx-auto" style="width: fit-content;" data-toggle="modal" data-target="#exampleModal">
+                    Change Location
+                </button>
+                
+                <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Change Location</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <form class="pg-2 m-2">
+                                    <div class="form-group row d-flex justify-content-start align-items-baseline">
+                                        <label class="label-info col-md-4">City</label>
+                                        <input type="text" class="form-control col-md-4" id="city-input" placeholder="Enter City">
+                                    </div>
+                                    <div class="form-group row d-flex justify-content-start align-items-baseline">
+                                        <label class="col-md-4">Nation</label>
+                                        <input type="text" class="form-control col-md-4" id="nation-input" placeholder="Enter Nation">
+                                    </div>
+                                </form>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" id="loc-save-change">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!--Include local JS file-->
+    <script src="storage.js"></script>
+    <script src="weatherAPIfetching.js"></script>
+    <script src="UI.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
